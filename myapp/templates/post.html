@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        body{
+  background: url("http://dash.ga.co/assets/anna-bg.png");
+}
+    </style>
+</head>
+<body bgcolor="white">
+
+<font color="white">
+   <h1><b><center>CREATE YOUR POST HERE</center></b></h1>
+
+
+
+
+
+     <form method="POST" enctype="multipart/form-data">
+
+       {% csrf_token %}
+       {{ form }}
+
+       <input type="submit"  class="btn btn-default" value="Add a picture">
+     </form>
+
+</font>
+</body>
+</html>
