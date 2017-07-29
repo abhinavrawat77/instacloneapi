@@ -1,17 +1,79 @@
-  # login.html
-    <form method="post">
-        {% csrf_token %}
 
-      <div>
+<!DOCTYPE html>
+<html>
+<style>
+form {
+}
+input[type=text], input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+button {
+    background-color: lawngreen;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}
+button:hover {
+    opacity: 0.8;
+}
+.imgcontainer {
+    text-align: right;
+    margin: 24px 0 12px 0;
+}
+img {
+     float: right;
+     width: 30%;
+     height: 40%;
+}
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+.container {
+    padding: 16px;
+}
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+}
+</style>
+<body bgcolor="#ffc0cb">
+
+<center><h1>Login Form</h1></center>
+<img src="http://i.imgur.com/2lw2Tv5l.png">
+
+
+<form method="post">
+    {% csrf_token %}
+     <div class ="form-group">
           <label for="username">Username: </label>
-          <input id="username" type="text" name="username" value={{ username }}>
+          <input id="username" class="form-control" type="text" name="username" required value={{ username }}>
       </div>
 
       <div>
           <label for="password">Password: </label>
-          <input id="password" type="password" name="password" value={{ password }}>
+          <input id="password" class="form-control"type="password" name="password" required value={{ password }}>
       </div>
 
       <input type="submit" value="Log In">
 
-    </form>
+
+</form>
+
+</body>
+</html>

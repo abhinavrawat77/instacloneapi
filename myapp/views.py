@@ -2,8 +2,14 @@
 from django.shortcuts import render, redirect
 from forms import SignUpForm,LoginForm
 from models import UserModel
-from django.http import HttpResponse
 from django.contrib.auth.hashers import make_password
+from django.http import HttpResponse,HttpResponseRedirect
+from datetime import timedelta
+from django.utils import timezone
+from instaclone.settings import BASE_DIR
+
+from imgurpython import ImgurClient
+import sendgrid
 
 # Create your views here.
 
